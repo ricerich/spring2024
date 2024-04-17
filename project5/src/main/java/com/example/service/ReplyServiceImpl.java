@@ -1,10 +1,9 @@
 package com.example.service;
 
-import java.util.List;
-
 import org.springframework.stereotype.Service;
 
 import com.example.domain.Criteria;
+import com.example.domain.ReplyPageDTO;
 import com.example.domain.ReplyVO;
 import com.example.mapper.ReplyMapper;
 
@@ -54,22 +53,34 @@ public class ReplyServiceImpl implements ReplyService {
 
   }
 
-  @Override
-  public List<ReplyVO> getList(Criteria cri, Long bno) {
-
-    log.info("get Reply List of a Board " + bno);
-
-    return mapper.getListWithPaging(cri, bno);
-
-  }
-  
 //  @Override
-//  public ReplyPageDTO getListPage(Criteria cri, Long bno) {
-//       
-//    return new ReplyPageDTO(
-//        mapper.getCountByBno(bno), 
-//        mapper.getListWithPaging(cri, bno));
+//  public List<ReplyVO> getList(Criteria cri, Long bno) {
+//
+//    log.info("get Reply List of a Board " + bno);
+//
+//    return mapper.getListWithPaging(cri, bno);
+//
 //  }
+  
+  @Override
+  public ReplyPageDTO getListPage(Criteria cri, Long bno) {
+       
+    return new ReplyPageDTO(mapper.getCountByBno(bno), 
+					        mapper.getListWithPaging(cri, bno));
+  }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 

@@ -2,14 +2,14 @@
 	pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
-<html lang="en"> 
+<html lang="en">
 
 <%@include file="../include/header.jsp"%>
 
 <body class="bg-gradient-primary">
 
 	<div class="container">
- 
+
 		<div class="card o-hidden border-0 shadow-lg my-5">
 			<div class="card-body p-5" >
 				<!-- Nested Row within Card Body -->

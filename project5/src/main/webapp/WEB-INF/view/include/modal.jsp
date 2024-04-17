@@ -11,7 +11,7 @@
 				<button class="close" type="button" data-dismiss="modal"
 					aria-label="Close">
 					<span aria-hidden="true">×</span>
-				</button>  
+				</button>
 			</div>
 			<div class="modal-body">처리가 완료 되었습니다.</div>
 			<div class="modal-footer">

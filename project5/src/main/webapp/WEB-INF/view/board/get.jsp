@@ -5,7 +5,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 
 <!DOCTYPE html>
-<html lang="en">  
+<html lang="en">
 
 <%@include file="../include/header.jsp"%>
 
@@ -53,8 +53,15 @@
 				operForm.submit();
 
 			});
+			
+// 			var bnoValue = $("#operForm").find("#bno").val();
+// 			var replyUL = $(".chat");
+			
+// 			replyList.showList(1, bnoValue, replyUL);
+			
 		});
 	</script>
+	
 
 	<div class="container">
 
@@ -119,10 +126,9 @@
 									<input type='hidden' id='bno' name='bno' value='<c:out value="${board.bno}"/>'> 
 									<input type='hidden' name='pageNum' value='<c:out value="${cri.pageNum}"/>'> 
 									<input type='hidden' name='amount' value='<c:out value="${cri.amount}"/>'> 
-									<input type='hidden' name='keyword'value='<c:out value="${cri.keyword}"/>'> 
+									<input type='hidden' name='keyword' value='<c:out value="${cri.keyword}"/>'> 
 									<input type='hidden' name='type' value='<c:out value="${cri.type}"/>'>
 								</form>
-
 							</div>
 							<!--  end panel-body -->
 						</div>
@@ -150,17 +156,27 @@
 								</ul>
 							</div>
 
-							<div class="panel-footer"></div>
+							<div class="panel-footer">
+								<input type='hidden' id='pageNumReply' value='1'> 
+							</div>
 							
 						</div>
 					</div>
 				</div>
 				
-				<%@include file="../reply/reply_modal.jsp"%>
+				<%@include file="../reply/reply_modal_ui.jsp"%>
 				
-				<%@include file="../reply/reply_list.jsp"%>
+				<script type="text/javascript" src="/resources/js/reply/reply_new_btn_load.js"></script>
 				
-				<script type="text/javascript" src="/resources/js/reply_ajax.js"></script>
+				<script type="text/javascript" src="/resources/js/reply/reply_ajax.js"></script>
+				
+				<script type="text/javascript" src="/resources/js/reply/reply_list.js"></script>
+				
+				<script type="text/javascript" src="/resources/js/reply/reply_list_load.js"></script>
+
+				<script type="text/javascript" src="/resources/js/reply/reply_list_click_load.js"></script>
+				
+				<script type="text/javascript" src="/resources/js/reply/reply_page_click_load.js"></script>
 				
 <%-- 				<%@include file="../reply/reply_ajax_test.jsp"%> --%>
 				

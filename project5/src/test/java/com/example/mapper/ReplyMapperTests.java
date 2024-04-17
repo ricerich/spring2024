@@ -29,7 +29,7 @@ public class ReplyMapperTests {
 	@Setter(onMethod_ = @Autowired)
 	private ReplyMapper mapper;
 
-	@Test
+//	@Test
 	public void testCreate() {
 
 		IntStream.rangeClosed(1, 10).forEach(i -> {
@@ -97,13 +97,13 @@ public class ReplyMapperTests {
 
 	}
 	
-//	@Test
+	@Test
 	public void testList2() {
 
 		Criteria cri = new Criteria(2, 10);
 
 		// 7L
-		List<ReplyVO> replies = mapper.getListWithPaging(cri, 17L);
+		List<ReplyVO> replies = mapper.getListWithPaging(cri, 219L);
 
 		replies.forEach(reply -> log.info(reply));
 

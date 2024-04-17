@@ -8,11 +8,25 @@
 
 	var bnoValue = '<c:out value="${board.bno}"/>';
 	
-	//1. 댓글 목록 테스트
+// 	//1. 댓글 목록 테스트
+// 	replyService.getList(
+// 							{bno:bnoValue, page:1}
+// 							, 
+// 							function(list){
+	    
+// 						  		for(var i = 0,  len = list.length||0; i < len; i++ ){
+// 						  			console.log(list[i]);
+// 						    	}
+// 							}
+// 	);
+
+	//new - 1. 댓글 목록 테스트
 	replyService.getList(
 							{bno:bnoValue, page:1}
 							, 
-							function(list){
+							function(replyCnt, list){
+								
+								console.log("replyCnt: "+ replyCnt );
 	    
 						  		for(var i = 0,  len = list.length||0; i < len; i++ ){
 						  			console.log(list[i]);
@@ -20,14 +34,14 @@
 							}
 	);
 	
-	//2. 댓글 입력 테스트
-	replyService.add(
-						{reply:"테스트 댓글 123", replyer:"강개토", bno:bnoValue}
-					 	,
-				    	function(result){ 
-				      		alert("RESULT: " + result);
-						}
-	); 
+// 	//2. 댓글 입력 테스트
+// 	replyService.add(
+// 						{reply:"테스트 댓글 123", replyer:"강개토", bno:bnoValue}
+// 					 	,
+// 				    	function(result){ 
+// 				      		alert("RESULT: " + result);
+// 						}
+// 	); 
 	
 // 	//3. 댓글 수정 테스트
 // 	replyService.update(
